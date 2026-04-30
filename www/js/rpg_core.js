@@ -1669,6 +1669,7 @@ Bitmap.prototype._requestImage = function(url){
         this._image = Bitmap._reuseImages.pop();
     }else{
         this._image = new Image();
+        this._image.crossOrigin = 'anonymous';
     }
 
     if (this._decodeAfterRequest && !this._loader) {
@@ -1676,6 +1677,7 @@ Bitmap.prototype._requestImage = function(url){
     }
 
     this._image = new Image();
+    this._image.crossOrigin = 'anonymous';
     this._url = url;
     this._loadingState = 'requesting';
 
@@ -1945,6 +1947,7 @@ Graphics.canUseSaturationBlend = function() {
  */
 Graphics.setLoadingImage = function(src) {
     this._loadingImage = new Image();
+    this._loadingImage.crossOrigin = 'anonymous';
     this._loadingImage.src = src;
 };
 

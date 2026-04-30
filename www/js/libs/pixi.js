@@ -5531,6 +5531,7 @@ var Resource = function () {
             this.data = this.metadata.loadElement;
         } else if (type === 'image' && typeof window.Image !== 'undefined') {
             this.data = new Image();
+            this.data.crossOrigin = 'anonymous';
         } else {
             this.data = document.createElement(type);
         }
@@ -6511,6 +6512,7 @@ function blobMiddlewareFactory() {
                 // this is an image, convert the binary string into a data url
                 if (type && type.indexOf('image') === 0) {
                     resource.data = new Image();
+                    resource.data.crossOrigin = 'anonymous';
                     resource.data.src = 'data:' + type + ';base64,' + _b2.default.encodeBinary(resource.xhr.responseText);
 
                     resource.type = _Resource2.default.TYPE.IMAGE;
@@ -6533,6 +6535,7 @@ function blobMiddlewareFactory() {
 
                         resource.blob = resource.data;
                         resource.data = new Image();
+                        resource.data.crossOrigin = 'anonymous';
                         resource.data.src = src;
 
                         resource.type = _Resource2.default.TYPE.IMAGE;
@@ -24897,6 +24900,7 @@ var BaseTexture = function (_EventEmitter) {
             // new Image() breaks tex loading in some versions of Chrome.
             // See https://code.google.com/p/chromium/issues/detail?id=238071
             var image = new Image(); // document.createElement('img');
+            image.crossOrigin = 'anonymous';
 
             if (crossorigin === undefined && imageUrl.indexOf('data:') !== 0) {
                 image.crossOrigin = (0, _determineCrossOrigin2.default)(imageUrl);
@@ -29300,6 +29304,7 @@ var CanvasExtract = function () {
 
     CanvasExtract.prototype.image = function image(target) {
         var image = new Image();
+        image.crossOrigin = 'anonymous';
 
         image.src = this.base64(target);
 
@@ -29506,6 +29511,7 @@ var WebGLExtract = function () {
 
     WebGLExtract.prototype.image = function image(target) {
         var image = new Image();
+        image.crossOrigin = 'anonymous';
 
         image.src = this.base64(target);
 

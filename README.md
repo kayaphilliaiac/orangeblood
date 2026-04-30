@@ -1,12 +1,11 @@
 # orangeblood
-built on my hopes and dreams should work :)
-
-scratch the above line ^, does not load past the main intro 🙏 will fix this in a few hours (14:49 est)
+built on my hopes and dreams should work :) (i fixed it)
 
 please credit if you use, does not have to be anything major
 
 ## in a blank html file to download
-```<!DOCTYPE html>
+```
+<!DOCTYPE html>
 <html>
     <head>
         <base href="https://cdn.jsdelivr.net/gh/kayaphilliaiac/orangeblood@main/">
@@ -34,4 +33,29 @@ please credit if you use, does not have to be anything major
         <script type="text/javascript" src="js/rpg_windows.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
-</html>```
+        <script>
+            // full screen the game ----code i stole from gn math, sorry
+            function applycanvasmode() {
+                let w = 0;
+                let h = 0;
+                let maxW = window.innerWidth;
+                let maxH = window.innerHeight;
+                if ((maxW * 0.75) > maxH) {
+                    h = maxH;
+                    w = Math.floor((maxH / 3) * 4);
+                } else {
+                    w = maxW;
+                    h = Math.floor((maxW / 4) * 3);
+                }
+                document.querySelector("#GameCanvas").style.width = w + "px";
+                document.querySelector("#GameCanvas").style.height = h + "px";
+                document.querySelector("#GameVideo").style.width = w + "px";
+                document.querySelector("#GameVideo").style.height = h + "px";
+                document.querySelector("#UpperCanvas").style.width = w + "px";
+                document.querySelector("#UpperCanvas").style.height = h + "px";
+            }
+            setInterval(applycanvasmode, 100);
+        </script>
+
+</html>
+```

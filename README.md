@@ -2,7 +2,7 @@
 built on my hopes and dreams should work :)
 
 ## in a blank html file to download
-`<!DOCTYPE html>
+```<!DOCTYPE html>
 <html>
     <head>
         <base href="https://cdn.jsdelivr.net/gh/kayaphilliaiac/orangeblood@main/">
@@ -30,4 +30,4 @@ built on my hopes and dreams should work :)
         <script type="text/javascript" src="js/rpg_windows.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/main.js"></script>
-</html>`
+</html>```

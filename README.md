@@ -1,6 +1,9 @@
 # orangeblood
 built on my hopes and dreams should work :)
+
 scratch the above line ^, does not load past the main intro 🙏 will fix this in a few hours (14:49 est)
+
+please credit if you use, does not have to be anything major
 
 ## in a blank html file to download
 ```<!DOCTYPE html>

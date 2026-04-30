@@ -56,6 +56,6 @@ please credit if you use, does not have to be anything major
             }
             setInterval(applycanvasmode, 100);
         </script>
-
+    </body>
 </html>
 ```
